@@ -1,4 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
+from time import sleep
 
 
 class BaseElement(object):
@@ -19,6 +20,7 @@ class BaseElement(object):
         self.element().send_keys(value)
 
     def click(self):
+        sleep(.5)
         self.element().click()
 
     def is_displayed(self):

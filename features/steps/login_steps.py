@@ -1,4 +1,4 @@
-from support.pages import HomePage
+from support.pages import *
 from support.ui import *
 
 
@@ -31,4 +31,16 @@ def step(context, obj_type, obj_name):
 @then("Text '{text}' should be displayed")
 def step(context, text):
     assert Text(context, text).is_displayed()
+
+
+@then("'{page}' page should be displayed")
+def step(context, page):
+    page = globals()[page + 'Page']
+    assert page(context).is_displayed()
+
+
+@then("User should be logged {in_out}")
+def step(context, in_out):
+    logged_in = in_out == 'in'
+    assert WelcomePage(context).is_logged_in() and logged_in
 
