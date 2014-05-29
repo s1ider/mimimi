@@ -4,7 +4,7 @@ from yaml import load
 
 def before_all(context):
     # setup webdriver
-    context.browser = webdriver.Chrome()
+    context.browser = webdriver.Firefox()
 
     # read config
     settings_file = open('settings.yml').read()
