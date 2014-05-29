@@ -27,3 +27,8 @@ def step(context, obj_type, obj_name):
     obj(context, obj_name).click()
 
 
+#--- then ---
+@then("Text '{text}' should be displayed")
+def step(context, text):
+    assert Text(context, text).is_displayed()
+

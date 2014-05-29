@@ -1,10 +1,11 @@
 Feature: Login
 
-    Scenario: Incorrect email address
+    Scenario: Incorrect password
         Given I am on 'Home' page
-        When Enter text 'r2d2@getgoing.com' in textedit with label 'Email address'
-        When Enter text 'wrong_password' in textedit with label 'Password'
+        When Fill form:
+            | label         | value             |
+            | Email address | r2d2@getgoing.com |
+            | Password      | wrong_password    |
         And Click on button 'Sign In'
-        Then Text 'not the right password' should be displayed
-
+        Then Text 'not right password' should be displayed
 

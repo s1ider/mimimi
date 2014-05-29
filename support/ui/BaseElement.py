@@ -1,3 +1,6 @@
+from selenium.common.exceptions import NoSuchElementException
+
+
 class BaseElement(object):
     """ Base element class """
     def __init__(self, context, locator):
@@ -17,3 +20,9 @@ class BaseElement(object):
 
     def click(self):
         self.element().click()
+
+    def is_displayed(self):
+        try:
+            return self.element.is_displayed()
+        except NoSuchElementException:
+            return False
