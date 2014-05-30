@@ -18,3 +18,9 @@ def before_all(context):
 def after_all(context):
     pass
     # context.browser.quit()
+
+
+def after_scenario(context, scenario):
+    if scenario.status == 'failed':
+        filename = "{0}.png".format(scenario.name)
+        context.browser.save_screenshot(filename)

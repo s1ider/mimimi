@@ -13,7 +13,7 @@ class WelcomePage(BasePage):
     def is_logged_in(self):
         loc = "//li[contains(@class, 'account-settings-tab')]"
         try:
-            return ui.BaseElement(self.context, loc).element.is_displayed()
+            return ui.BaseElement(self.context, loc).element().is_displayed()
         except NoSuchElementException:
             return False
 

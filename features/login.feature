@@ -9,6 +9,7 @@ Feature: Login
         And Click on button 'Sign In'
         Then Text 'not right password' should be displayed
 
+    @smoke
     Scenario: Valid password
         Given I am on 'Home' page
         When Fill form:

@@ -25,6 +25,6 @@ class BaseElement(object):
 
     def is_displayed(self):
         try:
-            return self.element.is_displayed()
+            return self.element().is_displayed()
         except NoSuchElementException:
             return False
